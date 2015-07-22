@@ -53,4 +53,16 @@ type Peg = String
 type Move = (Peg, Peg)
 
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi = undefined
+hanoi 0 src des tmp = []
+hanoi 1 src des tmp = [(src,des)]
+hanoi n src des tmp = [] ++ (hanoi (n-1) src tmp des) ++ (hanoi 1 src des tmp) ++ (hanoi (n-1) tmp des src) 
+
+hanoi4 :: Integer -> Integer
+hanoi4 0  = 0
+hanoi4 1  = 1
+hanoi4 n = minimum $ zip  [] [0..n-1] []
+--hanoi4 n src des tmp1 tmp2 = ( (hanoi 1 src des tmp1 tmp2 +  (2^ (n -1)  -1 )), () )
+
+
+hanoiCount ::  Integer -> Integer -> Integer
+hanoiCount n k = (hanoi4 k ) + (2 ^ (n-k) -1)
