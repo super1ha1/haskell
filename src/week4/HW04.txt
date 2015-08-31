@@ -33,11 +33,6 @@ instance (Num a, Eq a, Show a) => Show (Poly a) where
         displayTerm pow coef = (show coef) ++ "x^" ++ (show pow)
 
 
-    --show (P poly) = displayPoly 0 poly
-    --displayPoly _ [] = ""
-    --displayPoly level [x] = displayTerm level x
-    --displayPoly level [x:xs] 
-    --    | x == 0 = displayArr
 -- Exercise 4 -----------------------------------------
 
 plus :: Num a => Poly a -> Poly a -> Poly a
