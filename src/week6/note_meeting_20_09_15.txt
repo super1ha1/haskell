@@ -1,0 +1,16 @@
+no stack trace in haskell
+ 
+ some things that each lang need lower to do 
+
+ Num a => [a] -> a
+	-Num a = > [a] just mean that a must be type Num
+
+Functor
+apply function to list
+
+ Java all variable default to null
+
+ Ex3: 
+ destructor Cons a also can
+ Generalize algebra 
+ GAData Type
