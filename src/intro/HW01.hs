@@ -44,7 +44,11 @@ sumDigit n
 
 -- Validate a credit card number using the above functions.
 luhn :: Integer -> Bool
-luhn = undefined
+luhn n 
+	  | n <= 0 = False
+	  | (mod (sumDigits (doubleEveryOther (toRevDigits n))) 10) == 0 =  True
+	  | otherwise = False
+
 
 -- Exercise 6 -----------------------------------------
 
@@ -60,7 +64,7 @@ hanoi n src des tmp = [] ++ (hanoi (n-1) src tmp des) ++ (hanoi 1 src des tmp) +
 hanoi4 :: Integer -> Integer
 hanoi4 0  = 0
 hanoi4 1  = 1
-hanoi4 n = minimum $ zip  [] [0..n-1] []
+--hanoi4 n = minimum $ zip  [] [0..n-1] []
 --hanoi4 n src des tmp1 tmp2 = ( (hanoi 1 src des tmp1 tmp2 +  (2^ (n -1)  -1 )), () )
 
 
